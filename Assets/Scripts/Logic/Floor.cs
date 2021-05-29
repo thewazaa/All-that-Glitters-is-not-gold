@@ -16,9 +16,21 @@ public class Floor : MonoBehaviour
         coinOrBombs = GetComponentsInChildren<CoinOrBomb>();
     }
 
-    private void OnBecameVisible() => WalkAreaManager.Instance.ShowFloorAfter(this);
+    private void OnBecameVisible()
+    {
+#if UNITY_EDITOR
+        if (Camera.current && Camera.current.name == "SceneCamera") return;
+#endif
+        WalkAreaManager.Instance.ShowFloorAfter(this);
+    }
 
-    private void OnBecameInvisible() => WalkAreaManager.Instance.HideFloor(this);
+    private void OnBecameInvisible()
+    {
+#if UNITY_EDITOR
+        if (Camera.current && Camera.current.name == "SceneCamera") return;
+#endif
+        WalkAreaManager.Instance.HideFloor(this);
+    }
 
     public void Reset()
     {

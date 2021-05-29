@@ -48,7 +48,7 @@ public class CoinOrBomb : MonoBehaviour
                 audioSource.PlayOneShot(GameManager.Instance.soundExplosion);
                 Deactivate("explode");
 
-                if (collision.gameObject.layer != 6)
+                if (collision.gameObject.layer != 6 && collision.gameObject.layer != 9)
                     return;
                 PlayerManager.Instance.gameObject.SetActive(false);
                 DeadPlayerManager.Instance.Replace();
@@ -72,7 +72,7 @@ public class CoinOrBomb : MonoBehaviour
 
     public void ChangeHowItIsSeen()
     {
-        worksAs = inmutable || !GameManager.Instance.glitterIsBad ? initialWorkAs : OpositeInitialWorkAs;
-        animator.SetBool("glow", GameManager.Instance.glitterIsBad && worksAs != ECoinOrBomb.Coin);
+        worksAs = inmutable || !GlitterManager.Instance.glitterIsBad ? initialWorkAs : OpositeInitialWorkAs;
+        animator.SetBool("glow", GlitterManager.Instance.glitterIsBad && worksAs != ECoinOrBomb.Coin || !GlitterManager.Instance.glitterIsBad && worksAs == ECoinOrBomb.Coin);
     }
 }

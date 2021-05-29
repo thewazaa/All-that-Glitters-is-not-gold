@@ -6,14 +6,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public bool glitterIsBad = false;
-
     public float speed = .05f;
 
     [Header("Sounds")]
+    public AudioClip soundGameOver;
+    public AudioClip soundTick;
     public AudioClip soundCoin;
     public AudioClip soundExplosion;
     public AudioClip soundMagicExplosion;
+    public AudioClip soundAllThatGlittersIsNotGold;
 
     private void Awake()
     {
@@ -44,11 +45,5 @@ public class GameManager : MonoBehaviour
             Camera.main.transform.position += new Vector3(speed, 0, 0);
             yield return new WaitForFixedUpdate();
         }
-    }
-
-    public void SetGlitterOn()
-    {
-        glitterIsBad = true;
-        WalkAreaManager.Instance.ChangeHowItIsSeen();
     }
 }

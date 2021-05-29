@@ -8,6 +8,7 @@ public class GameOverManager : MonoBehaviour
     public static GameOverManager Instance { get; private set; }
 
     private new Animation animation;
+    private AudioSource audioSource;
 
     public bool End { get; private set; }
     private bool interacterable = false;
@@ -20,6 +21,7 @@ public class GameOverManager : MonoBehaviour
         {
             Instance = this;
             animation = GetComponent<Animation>();
+            audioSource = GetComponent<AudioSource>();
         }
     }
 
@@ -27,8 +29,11 @@ public class GameOverManager : MonoBehaviour
     {
         End = true;
         animation.Play();
-        FrontCourtainManager.Instance.Close();
+        if (FrontCourtainManager.Instance != null)
+            FrontCourtainManager.Instance.Close();
     }
+
+    public void SoundGameOver() => audioSource.PlayOneShot(GameManager.Instance.soundGameOver);
 
     public void SetInteracterable() => interacterable = true;
 
