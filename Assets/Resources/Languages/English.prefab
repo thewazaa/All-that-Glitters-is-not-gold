@@ -44,21 +44,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   languageName: English
-  startClick: Click boxing to start
-  startClick_noStop: Don't stop! Click boxing!!!
-  menuStart: Let's go
-  menuTrain: Train
-  menuHighScores: High scores
-  menuSettings: Settings
-  menuBack: Back
-  coins: 
-  points: px
-  desperateAttack: You're losing. ATTACK NOW
-  winnerAttack: You're winning, don't stop now
-  startAttack: Hit your enemy
-  startAttack_noStop: hit hit HIT HIIIIT
-  playerLose: You... lost, loser
-  playerWins: You WON
-  tryAgain: Try again
-  textRecollection: You had won [x] coins
-  textStore: Buy coins
+  bStartGame: Start game
+  bConfig: Config
+  bQuit: Quit
+  bMusic: Music
+  bSound: Sound
+  bAbout: About
+  bEnglish: English
+  bSpanish: Spanish
+  bCatalonian: Catalonian
+  bBack: Back
+  tTime: Time
+  tGold: Gold
+  tAbout: "Game made by Josep M. Pons\r\n\r\nCode: Josep M. Pons\r\n\r\nGraphics:
+    Josep M.Pons\r\n\r\nMusic:\r\n\r\nThe Intruder: Rub\xE9n Carret\xF3n (https://soundcloud.com/user-791255671)\r\n\r\nSounds:\r\n\r\nClick1.wav
+    - by EdgardEdition (https://freesound.org/people/EdgardEdition/sounds/113051/)\r\nRetro
+    Coin Collect - by DrMinky (https://freesound.org/people/DrMinky/sounds/166184/)\r\nWatch
+    tick - by DrMinky (https://freesound.org/people/DrMinky/sounds/174721/)\r\nExplosion
+    - by Aiwha (https://freesound.org/people/Aiwha/sounds/250712/)\r\nExplosion_001.mp3
+    - by cydon (https://freesound.org/people/cydon/sounds/268557/)\r\nGame_Over_06_Voices.wav
+    - by MATRIXXX_ (https://freesound.org/people/MATRIXXX_/sounds/435203/)\r\n\r\nVoices:\r\n\r\nAll
+    that glitters is not gold: Josep M. Pons\r\n\r\n-\r\n\r\nThanks to Rub\xE9n to
+    let me use his music"
+  allThatGlittersIsNotGold: All That Glitters Is Not Gold

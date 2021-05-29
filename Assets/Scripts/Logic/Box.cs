@@ -4,22 +4,31 @@ using UnityEngine;
 
 public class Box : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public enum EBox
     {
-        
+        Solid,
+        NonSolid
     }
 
-    // Update is called once per frame
-    void Update()
+    public EBox worksAs;
+
+    public bool inmutable = false;
+
+    private Animator animator;
+
+    private EBox initialWorkAs;
+    private EBox OpositeInitialWorkAs => initialWorkAs == EBox.Solid ? EBox.NonSolid : EBox.Solid;
+
+    private void Awake()
     {
-        
+        initialWorkAs = worksAs;        
+        animator = GetComponent<Animator>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void ChangeHowItIsSeen()
     {
-        //Debug.Log("a");
-        //transform.SetParent(collision.collider.transform);
-        //collision.collider.transform.SetParent(transform);
+        worksAs = inmutable || !GlitterManager.Instance.glitterIsBad ? initialWorkAs : OpositeInitialWorkAs;
+        animator.SetBool("glow", GlitterManager.Instance.glitterIsBad && worksAs != EBox.Solid || !GlitterManager.Instance.glitterIsBad && worksAs == EBox.Solid);
+        gameObject.layer = worksAs == EBox.Solid ? 8 : 10;
     }
 }
