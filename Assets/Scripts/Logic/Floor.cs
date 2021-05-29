@@ -10,11 +10,15 @@ public class Floor : MonoBehaviour
     public float width = 60;
 
     private CoinOrBomb[] coinOrBombs;
+    private Box[] boxes;
 
     private void Awake()
     {
         coinOrBombs = GetComponentsInChildren<CoinOrBomb>();
+        boxes = GetComponentsInChildren<Box>();
     }
+
+    private void Start() => ChangeHowItIsSeen();
 
     private void OnBecameVisible()
     {
@@ -29,18 +33,14 @@ public class Floor : MonoBehaviour
 #if UNITY_EDITOR
         if (Camera.current && Camera.current.name == "SceneCamera") return;
 #endif
-        WalkAreaManager.Instance.HideFloor(this);
-    }
-
-    public void Reset()
-    {
-        foreach (CoinOrBomb coinOrBomb in coinOrBombs)
-            coinOrBomb.Reset();
+        Destroy(this.gameObject);
     }
 
     public void ChangeHowItIsSeen()
     {
         foreach (CoinOrBomb coinOrBomb in coinOrBombs)
             coinOrBomb.ChangeHowItIsSeen();
+        foreach (Box box in boxes)
+            box.ChangeHowItIsSeen();
     }
 }

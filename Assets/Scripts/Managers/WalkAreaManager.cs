@@ -6,7 +6,9 @@ public class WalkAreaManager : MonoBehaviour
 {
     public static WalkAreaManager Instance { get; private set; }
 
-    public List<Floor> poolFloors = new List<Floor>();
+    public List<Floor> listFloors = new List<Floor>();
+
+    private int floorsShown = 1;
 
     private void Awake()
     {
@@ -19,11 +21,7 @@ public class WalkAreaManager : MonoBehaviour
     private void Start()
     {
         foreach (Floor floor in Resources.LoadAll<Floor>("Floors"))
-        {
-            Floor tmp = Instantiate<Floor>(floor, Vector3.zero, gameObject.transform.rotation, gameObject.transform);
-            poolFloors.Add(tmp);
-            tmp.gameObject.SetActive(false);
-        }
+            listFloors.Add(floor);
     }
 
     public void ChangeHowItIsSeen()
@@ -34,18 +32,12 @@ public class WalkAreaManager : MonoBehaviour
 
     public void ShowFloorAfter(Floor after)
     {
-        int id = Random.Range(0, WalkAreaManager.Instance.poolFloors.Count - 1);
+        int id = floorsShown < listFloors.Count ? floorsShown : Random.Range(0, listFloors.Count);
 
-        Floor floor = WalkAreaManager.Instance.poolFloors[id];
-        WalkAreaManager.Instance.poolFloors.Remove(floor);
-        floor.gameObject.SetActive(true);
+        Floor floor = Instantiate<Floor>(WalkAreaManager.Instance.listFloors[id]);
+        floor.gameObject.transform.parent = transform;
         floor.transform.position = new Vector3(after.transform.position.x + floor.width, after.transform.position.y, 0);
-        floor.Reset();
-    }
 
-    public void HideFloor(Floor floor)
-    {
-        poolFloors.Add(floor);
-        floor.gameObject.SetActive(false);
+        floorsShown++;
     }
 }

@@ -55,5 +55,15 @@ MonoBehaviour:
   bCatalonian: "Catal\xE1n"
   bBack: "Atr\xE1s"
   tTime: Tiempo
-  tSeconds: s
   tGold: Oro
+  tAbout: "Juego hecho por Josep M. Pons\r\n\r\nC\xF3digo: Josep M. Pons\r\n\r\nGr\xE1ficos:
+    Josep M.Pons\r\n\r\nM\xFAsica:\r\n\r\nThe Intruder: Rub\xE9n Carret\xF3n (https://soundcloud.com/user-791255671)\r\n\r\nSonidos:\r\n\r\nClick1.wav
+    - de EdgardEdition (https://freesound.org/people/EdgardEdition/sounds/113051/)\r\nRetro
+    Coin Collect - de DrMinky (https://freesound.org/people/DrMinky/sounds/166184/)\r\nWatch
+    tick - de DrMinky (https://freesound.org/people/DrMinky/sounds/174721/)\r\nExplosion
+    - de Aiwha (https://freesound.org/people/Aiwha/sounds/250712/)\r\nExplosion_001.mp3
+    - de cydon (https://freesound.org/people/cydon/sounds/268557/)\r\nGame_Over_06_Voices.wav
+    - de MATRIXXX_ (https://freesound.org/people/MATRIXXX_/sounds/435203/)\r\n\r\nVoces:\r\n\r\n\"All
+    that glitters is not gold\": Josep M. Pons\r\n\r\n-\r\n\r\nGracias a Rub\xE9n
+    por dejarme usar su m\xFAsica"
+  allThatGlittersIsNotGold: No todo lo que brilla es oro

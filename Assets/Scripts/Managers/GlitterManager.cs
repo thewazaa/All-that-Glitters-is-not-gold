@@ -58,7 +58,7 @@ public class GlitterManager : MonoBehaviour
         int time = 30;
         while (time > 0 && !GameOverManager.Instance.End)
         {
-            clock.fillAmount = time / 30;
+            clock.fillAmount = time / 30f;
             text.text = $"{time / 60:00}:{time % 60:00}";
             yield return new WaitForSeconds(1);
             time--;
