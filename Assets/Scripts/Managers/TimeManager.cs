@@ -29,8 +29,7 @@ public class TimeManager : MonoBehaviour
     {
         if (!enableTimer)
             return;
-        float previousTime = totalTime;
         totalTime += Time.deltaTime;
-        text.text = $"{LanguageManager.Instance.Text.tTime}: {((int)totalTime / 60).ToString("00")}:{((int)totalTime % 60).ToString("00")}";
+        text.text = $"{LanguageManager.Instance.Text.tTime}: {(int)totalTime / 60:00}:{(int)totalTime % 60:00}";
     }
 }

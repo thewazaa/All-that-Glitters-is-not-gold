@@ -12,27 +12,46 @@ public class CoinOrBomb : MonoBehaviour
 
     public ECoinOrBomb worksAs;
 
-    public SpriteRenderer glowSprite;
     public bool inmutable = false;
+
+    private bool isActive = true;
 
     private ECoinOrBomb initialWorkAs;
     private ECoinOrBomb OpositeInitialWorkAs => initialWorkAs == ECoinOrBomb.Coin ? ECoinOrBomb.Bomb : ECoinOrBomb.Coin;
 
-    private void Awake() => initialWorkAs = worksAs;
+    private AudioSource audioSource;
+    private Animator animator;
+
+    private void Awake()
+    {
+        initialWorkAs = worksAs;
+        audioSource = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
+    }
 
     public void Start() => Reset();
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer != 6)
+        if (!isActive)
             return;
         switch (worksAs)
         {
             case ECoinOrBomb.Coin:
+                if (collision.gameObject.layer != 6)
+                    return;
+                audioSource.PlayOneShot(GameManager.Instance.soundCoin);
+                Deactivate("hide");
                 GoldManager.Instance.TotalGold++;
-                gameObject.SetActive(false);
                 break;
             case ECoinOrBomb.Bomb:
+                audioSource.PlayOneShot(GameManager.Instance.soundExplosion);
+                Deactivate("explode");
+
+                if (collision.gameObject.layer != 6)
+                    return;
+                PlayerManager.Instance.gameObject.SetActive(false);
+                DeadPlayerManager.Instance.Replace();
                 GameManager.Instance.End();
                 break;
         }
@@ -40,13 +59,20 @@ public class CoinOrBomb : MonoBehaviour
 
     public void Reset()
     {
-        gameObject.SetActive(true);
+        isActive = true;
+        animator.SetTrigger("reset");
         ChangeHowItIsSeen();
+    }
+
+    private void Deactivate(string how)
+    {
+        isActive = false;
+        animator.SetTrigger(how);
     }
 
     public void ChangeHowItIsSeen()
     {
         worksAs = inmutable || !GameManager.Instance.glitterIsBad ? initialWorkAs : OpositeInitialWorkAs;
-        glowSprite.enabled = GameManager.Instance.glitterIsBad && worksAs != ECoinOrBomb.Coin;
+        animator.SetBool("glow", GameManager.Instance.glitterIsBad && worksAs != ECoinOrBomb.Coin);
     }
 }

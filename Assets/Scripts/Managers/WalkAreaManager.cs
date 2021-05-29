@@ -26,6 +26,12 @@ public class WalkAreaManager : MonoBehaviour
         }
     }
 
+    public void ChangeHowItIsSeen()
+    {
+        foreach (Floor floor in FindObjectsOfType<Floor>())
+            floor.ChangeHowItIsSeen();
+    }
+
     public void ShowFloorAfter(Floor after)
     {
         int id = Random.Range(0, WalkAreaManager.Instance.poolFloors.Count - 1);

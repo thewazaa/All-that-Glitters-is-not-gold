@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour
 
     public float speed = .05f;
 
+    [Header("Sounds")]
+    public AudioClip soundCoin;
+    public AudioClip soundExplosion;
+    public AudioClip soundMagicExplosion;
+
     private void Awake()
     {
         if (Instance != null)
@@ -39,5 +44,11 @@ public class GameManager : MonoBehaviour
             Camera.main.transform.position += new Vector3(speed, 0, 0);
             yield return new WaitForFixedUpdate();
         }
+    }
+
+    public void SetGlitterOn()
+    {
+        glitterIsBad = true;
+        WalkAreaManager.Instance.ChangeHowItIsSeen();
     }
 }

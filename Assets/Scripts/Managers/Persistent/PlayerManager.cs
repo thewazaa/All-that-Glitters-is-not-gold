@@ -38,6 +38,9 @@ public class PlayerManager : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
 
+    private float horizontal = 0;
+    private float vertical = 0;
+
     private void Awake()
     {
         if (Instance != null)
@@ -53,18 +56,26 @@ public class PlayerManager : MonoBehaviour
 
     private void Start() => startPosition = transform.position;
 
+
+    private void Update()
+    {
+        if (!isOn)
+            return;
+        horizontal = Input.GetAxis("Horizontal") * 10;
+        if (Input.GetButtonDown("Fire1") && OnFloor)
+            vertical = 300;
+    }
+
     public void FixedUpdate()
     {
         if (!isOn)
             return;
         if (!OnFloor && rb.velocity.y < 0)
             animator.SetBool("Fall", true);
-        float horizontal = Input.GetAxis("Horizontal") * 10;
-        float vertical = 0;
-        if (Input.GetButton("Fire1") && OnFloor)
-            vertical = 100;
         rb.AddForce(new Vector2(horizontal, vertical));
         Walk(!Mathf.Approximately(0, rb.velocity.x));
+        horizontal = 0;
+        vertical = 0;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

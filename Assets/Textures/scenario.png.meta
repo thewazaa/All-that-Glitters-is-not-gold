@@ -101,6 +101,12 @@ TextureImporter:
   - first:
       213: -2952107354327524650
     second: table glow
+  - first:
+      213: 6121738353819376467
+    second: ballon
+  - first:
+      213: -5792135063338990256
+    second: balloon start
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -926,6 +932,48 @@ TextureImporter:
       bones: []
       spriteID: 6da5d7e80020807d0800000000000000
       internalID: -2952107354327524650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ballon
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 386
+        width: 123
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 14, y: 33, z: 40, w: 14}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35bd9433998c4f450800000000000000
+      internalID: 6121738353819376467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloon start
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 517
+        width: 60
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055489219d33e9fa0800000000000000
+      internalID: -5792135063338990256
       vertices: []
       indices: 
       edges: []

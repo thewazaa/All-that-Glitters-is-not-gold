@@ -37,4 +37,6 @@ The Intruder - By Rubén Carretón
 Sounds
 
 Click1.wav https://freesound.org/people/EdgardEdition/sounds/113051/";
+
+    public string allThatGlittersIsNotGold = "All That Glitters Is Not Gold";
 }

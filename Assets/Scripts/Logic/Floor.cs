@@ -25,4 +25,10 @@ public class Floor : MonoBehaviour
         foreach (CoinOrBomb coinOrBomb in coinOrBombs)
             coinOrBomb.Reset();
     }
+
+    public void ChangeHowItIsSeen()
+    {
+        foreach (CoinOrBomb coinOrBomb in coinOrBombs)
+            coinOrBomb.ChangeHowItIsSeen();
+    }
 }
