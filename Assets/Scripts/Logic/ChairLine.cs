@@ -48,7 +48,7 @@ public class ChairLine : MonoBehaviour
         {
             case EChairLineMovement.stopped: return;
             case EChairLineMovement.linear:
-                transform.localPosition -= new Vector3(.05f * transform.localScale.x, 0, 0);
+                transform.localPosition -= new Vector3(.06f * transform.localScale.x, 0, 0);
                 if (transform.localPosition.x <= -20 * transform.localScale.x)
                 {
                     transform.localPosition += new Vector3(40 * transform.localScale.x, 0, 0);
@@ -65,7 +65,7 @@ public class ChairLine : MonoBehaviour
                     foreach (People people in peopleCreated)
                         people.Up();
                 }
-                angle += .1f;
+                angle += .05f;
                 break;
         }
     }

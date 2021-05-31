@@ -24,7 +24,6 @@ public class PlayerFloorManager : MonoBehaviour
         if (collision.gameObject.layer != 8)
             return;
         collisions++;
-        Debug.Log("+" + collisions);
         PlayerManager.Instance.OnFloor = collisions != 0;
     }
 
@@ -34,7 +33,6 @@ public class PlayerFloorManager : MonoBehaviour
         if (collision.gameObject.layer != 8)
             return;
         collisions--;
-        Debug.Log("-" + collisions);
         PlayerManager.Instance.OnFloor = collisions != 0;
     }
 

@@ -8,8 +8,6 @@ public class WalkAreaManager : MonoBehaviour
 
     public List<Floor> listFloors = new List<Floor>();
 
-    private int floorsShown = 1;
-
     private void Awake()
     {
         if (Instance != null)
@@ -32,12 +30,10 @@ public class WalkAreaManager : MonoBehaviour
 
     public void ShowFloorAfter(Floor after)
     {
-        int id = floorsShown < listFloors.Count ? floorsShown : Random.Range(1, listFloors.Count); // Floor 1 = tutorial. Avoid it
+        int id = Random.Range(1, listFloors.Count); // Floor 1 = tutorial. Avoid it
 
         Floor floor = Instantiate<Floor>(WalkAreaManager.Instance.listFloors[id]);
         floor.gameObject.transform.parent = transform;
         floor.transform.position = new Vector3(after.transform.position.x + floor.width, after.transform.position.y, 0);
-
-        floorsShown++;
     }
 }

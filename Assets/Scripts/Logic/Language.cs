@@ -40,6 +40,10 @@ Click1.wav https://freesound.org/people/EdgardEdition/sounds/113051/";
 
     public string allThatGlittersIsNotGold = "All That Glitters Is Not Gold";
 
+    public string allTheWorldIsAStage = "All the world's a stage,";
+    public string andAlltheMenAndWomenMerelyPlayers = "And all the men and women merely players:";
+    public string theyHaveTheirExitsAndTheirEntrances = "They have their exits and their entrances";
+
     public string tCoins = "Coins";
     public string tBombs = "Bombs";
     public string tWalkingBoxes = "Walking boxes";
