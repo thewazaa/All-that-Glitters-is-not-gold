@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public float speed = .05f;
+    public bool pause = false;
 
     [Header("Sounds")]
     public AudioClip soundGameOver;
@@ -24,8 +25,10 @@ public class GameManager : MonoBehaviour
             Instance = this;
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
+        while (!FrontCourtainManager.Instance.opened)
+            yield return new WaitForFixedUpdate();
         PlayerManager.Instance.isOn = true;
         TimeManager.Instance.enableTimer = true;
         StartCoroutine(CourotineCameraMovement());
@@ -35,14 +38,15 @@ public class GameManager : MonoBehaviour
     {
         PlayerManager.Instance.isOn = false;
         TimeManager.Instance.enableTimer = false;
-        GameOverManager.Instance.GameOver();          
+        GameOverManager.Instance.GameOver();
     }
 
     private IEnumerator CourotineCameraMovement()
     {
         while (!GameOverManager.Instance.End)
         {
-            Camera.main.transform.position += new Vector3(speed, 0, 0);
+            if (!pause)
+                Camera.main.transform.position += new Vector3(speed, 0, 0);
             yield return new WaitForFixedUpdate();
         }
     }

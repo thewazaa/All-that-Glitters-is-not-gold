@@ -7,9 +7,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3158582948901488082, guid: ceeab5ed1cf6fe74883eeb1a64696d5f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4768883381373231950, guid: ceeab5ed1cf6fe74883eeb1a64696d5f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6155645389042604401, guid: ceeab5ed1cf6fe74883eeb1a64696d5f, type: 3}
       propertyPath: m_RootOrder
@@ -58,10 +62,10 @@ PrefabInstance:
     - target: {fileID: 6526416056642600151, guid: ceeab5ed1cf6fe74883eeb1a64696d5f, type: 3}
       propertyPath: m_Icon
       value: 
-      objectReference: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+      objectReference: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 6526416056642600151, guid: ceeab5ed1cf6fe74883eeb1a64696d5f, type: 3}
       propertyPath: m_Name
-      value: Bomb bad
+      value: bomb
       objectReference: {fileID: 0}
     - target: {fileID: 8306168026091866960, guid: ceeab5ed1cf6fe74883eeb1a64696d5f, type: 3}
       propertyPath: inmutable

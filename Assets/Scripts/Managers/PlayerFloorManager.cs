@@ -17,24 +17,26 @@ public class PlayerFloorManager : MonoBehaviour
         }
     }
 
+    private int collisions = 0;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer != 8)
             return;
-        PlayerManager.Instance.OnFloor = true;
+        collisions++;
+        Debug.Log("+" + collisions);
+        PlayerManager.Instance.OnFloor = collisions != 0;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer != 8)
-            return;
-        PlayerManager.Instance.OnFloor = true;
-    }
 
     private void OnTriggerExit2D(Collider2D collision)
-    {
+    {        
         if (collision.gameObject.layer != 8)
             return;
-        PlayerManager.Instance.OnFloor = false;
+        collisions--;
+        Debug.Log("-" + collisions);
+        PlayerManager.Instance.OnFloor = collisions != 0;
     }
+
+    public void Reset() => collisions = 0;
 }

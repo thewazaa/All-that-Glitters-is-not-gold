@@ -32,7 +32,7 @@ public class WalkAreaManager : MonoBehaviour
 
     public void ShowFloorAfter(Floor after)
     {
-        int id = floorsShown < listFloors.Count ? floorsShown : Random.Range(0, listFloors.Count);
+        int id = floorsShown < listFloors.Count ? floorsShown : Random.Range(1, listFloors.Count); // Floor 1 = tutorial. Avoid it
 
         Floor floor = Instantiate<Floor>(WalkAreaManager.Instance.listFloors[id]);
         floor.gameObject.transform.parent = transform;

@@ -9,6 +9,7 @@ public class FrontCourtainManager : MonoBehaviour
     private Animator animator;
 
     public bool fadeOnAwake = false;
+    public bool opened = false;
 
     private void Awake()
     {
@@ -34,4 +35,7 @@ public class FrontCourtainManager : MonoBehaviour
     public void FadeIn() => animator.SetTrigger("light fade in");
 
     public void FadeOut() => animator.SetTrigger("light fade out");
+
+    public void SetOpened() => opened = true;
+    public void SetClosed() => opened = false;
 }

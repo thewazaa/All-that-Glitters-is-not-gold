@@ -61,9 +61,9 @@ public class PlayerManager : MonoBehaviour
     {
         if (!isOn)
             return;
-        horizontal = Input.GetAxis("Horizontal") * 10;
+        horizontal = Input.GetAxis("Horizontal") * 4;
         if (Input.GetButtonDown("Fire1") && OnFloor)
-            vertical = 300;
+            vertical = 7;
     }
 
     public void FixedUpdate()
@@ -72,7 +72,8 @@ public class PlayerManager : MonoBehaviour
             return;
         if (!OnFloor && rb.velocity.y < 0)
             animator.SetBool("Fall", true);
-        rb.AddForce(new Vector2(horizontal, vertical));
+        rb.velocity = new Vector2(horizontal, vertical != 0 ? vertical : rb.velocity.y);
+
         Walk(!Mathf.Approximately(0, rb.velocity.x));
         horizontal = 0;
         vertical = 0;
@@ -86,6 +87,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Reset()
     {
+        PlayerFloorManager.Instance.Reset();
         transform.position = startPosition;
         rb.velocity = Vector2.zero;
         Walk(false);
