@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7912400878179124057}
   - component: {fileID: 2198003260402180034}
   m_Layer: 0
-  m_Name: Catalonian
+  m_Name: Catalan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   bMusic: "M\xFAsica"
   bSound: So
   bAbout: A sobre de
-  bEnglish: "Angl\xE9s"
+  bEnglish: "Angl\xE8s"
   bSpanish: Espanyol
   bCatalonian: "Catal\xE0"
   bBack: Enrere
@@ -67,3 +67,12 @@ MonoBehaviour:
     that glitters is not gold\": Josep M. Pons\r\n\r\n-\r\n\r\nGr\xE0cies a Rub\xE9n
     per deixar-me fer servir la seva m\xFAsica"
   allThatGlittersIsNotGold: "No tot el que brilla \xE9s or"
+  tCoins: Monedes
+  tBombs: Bombes
+  tWalkingBoxes: Capses on caminar
+  tBackBoxes: Capses al fons
+  tBeware: Compte amb lo que brilla
+  bEasy: "L'or \xE9s or i les bombes, bombes (f\xE0cil)"
+  bNormal: "Tot el que brilla \xE9s or (normal)"
+  bHard: "No tot el que brilla \xE9s or (dif\xEDcil)"
+  bVeryHard: " Per qu\xE8 \xE9s tan dif\xEDcil? (Molt dif\xEDcil)"

@@ -67,3 +67,12 @@ MonoBehaviour:
     that glitters is not gold\": Josep M. Pons\r\n\r\n-\r\n\r\nGracias a Rub\xE9n
     por dejarme usar su m\xFAsica"
   allThatGlittersIsNotGold: No todo lo que brilla es oro
+  tCoins: Monedas
+  tBombs: Bombas
+  tWalkingBoxes: Cajas donde andar
+  tBackBoxes: Cajas del fondo
+  tBeware: Vigila con lo que brilla
+  bEasy: "El oro es oro y las bombas, bombas (f\xE1cil)"
+  bNormal: Todo lo que brilla es oro (normal)
+  bHard: "No todo lo que brilla es oro (dif\xEDcil)"
+  bVeryHard: "\xBFPor qu\xE9 es tan dif\xEDcil? (muy dif\xEDcil)"

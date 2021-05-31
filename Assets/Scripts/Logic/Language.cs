@@ -39,4 +39,15 @@ Sounds
 Click1.wav https://freesound.org/people/EdgardEdition/sounds/113051/";
 
     public string allThatGlittersIsNotGold = "All That Glitters Is Not Gold";
+
+    public string tCoins = "Coins";
+    public string tBombs = "Bombs";
+    public string tWalkingBoxes = "Walking boxes";
+    public string tBackBoxes = "Back boxes";
+    public string tBeware = "Beware the glitter";
+
+    public string bEasy = "Gold is gold, boms are bombs (easy)";
+    public string bNormal = "All that glitters is gold (normal)";
+    public string bHard = "All that glitters is not gold (hard)";
+    public string bVeryHard = "Why so hard? (very hard)";
 }

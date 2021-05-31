@@ -13,7 +13,10 @@ public class DeadPlayerManager : MonoBehaviour
         if (Instance != null)
             Destroy(this.gameObject);
         else
+        {
+            DontDestroyOnLoad(this);
             Instance = this;
+        }
         deadPlayerParts = GetComponentsInChildren<DeadPlayerPart>(true);
     }
 
@@ -21,5 +24,11 @@ public class DeadPlayerManager : MonoBehaviour
     {
         foreach (DeadPlayerPart deadPlayerPart in deadPlayerParts)
             deadPlayerPart.gameObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        foreach (DeadPlayerPart deadPlayerPart in deadPlayerParts)
+            deadPlayerPart.gameObject.SetActive(false);
     }
 }

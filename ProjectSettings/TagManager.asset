@@ -4,10 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - coin
-  - bomb
-  - coin immutable
-  - bomb immutable
+  - Pause movement
   layers:
   - Default
   - TransparentFX
