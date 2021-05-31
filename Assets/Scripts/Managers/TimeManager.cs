@@ -30,6 +30,12 @@ public class TimeManager : MonoBehaviour
         if (!enableTimer)
             return;
         totalTime += Time.deltaTime;
+        if (GameManager.Instance.speed < .1 && totalTime > 60)
+        {
+            PlayerManager.Instance.speed += Time.deltaTime / 50;
+            GameManager.Instance.speed += Time.deltaTime / 5000;
+        }
+
         text.text = $"{LanguageManager.Instance.Text.tTime}: {(int)totalTime / 60:00}:{(int)totalTime % 60:00}";
     }
 }

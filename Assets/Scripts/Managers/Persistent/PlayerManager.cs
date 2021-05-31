@@ -32,6 +32,7 @@ public class PlayerManager : MonoBehaviour
     }
 
     public bool isOn = false;
+    public float speed = 4;
 
     private Vector3 startPosition;
 
@@ -61,7 +62,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (!isOn)
             return;
-        horizontal = Input.GetAxis("Horizontal") * 4;
+        horizontal = Input.GetAxis("Horizontal") * speed;
         if (Input.GetButtonDown("Fire1") && OnFloor)
             vertical = 7;
     }
@@ -87,6 +88,7 @@ public class PlayerManager : MonoBehaviour
 
     public void Reset()
     {
+        speed = 4;
         PlayerFloorManager.Instance.Reset();
         transform.position = startPosition;
         rb.velocity = Vector2.zero;

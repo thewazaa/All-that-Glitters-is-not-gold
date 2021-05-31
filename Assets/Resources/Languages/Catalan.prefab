@@ -67,6 +67,9 @@ MonoBehaviour:
     that glitters is not gold\": Josep M. Pons\r\n\r\n-\r\n\r\nGr\xE0cies a Rub\xE9n
     per deixar-me fer servir la seva m\xFAsica"
   allThatGlittersIsNotGold: "No tot el que brilla \xE9s or"
+  allTheWorldIsAStage: "El m\xF3n sencer \xE9s un escenari"
+  andAlltheMenAndWomenMerelyPlayers: 'I tots els homes i dones simplement actors:'
+  theyHaveTheirExitsAndTheirEntrances: Amb les seves corresponents sortides i entrades
   tCoins: Monedes
   tBombs: Bombes
   tWalkingBoxes: Capses on caminar

@@ -27,11 +27,7 @@ public class PrinceOfMoroccoManager : MonoBehaviour
 
     private void Start() => textToShow = LanguageManager.Instance.Text.allThatGlittersIsNotGold;
 
-    public void StartAction()
-    {
-        Debug.Log("...");
-        animator.SetTrigger("start");
-    }
+    public void StartAction() => animator.SetTrigger("start");
 
     public void Reset()
     {
