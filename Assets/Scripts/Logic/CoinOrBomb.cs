@@ -11,6 +11,7 @@ public class CoinOrBomb : MonoBehaviour
     }
 
     public ECoinOrBomb worksAs;
+    public ECoinOrBomb lookAs;
 
     public bool inmutable = false;
 
@@ -72,7 +73,20 @@ public class CoinOrBomb : MonoBehaviour
 
     public void ChangeHowItIsSeen()
     {
-        worksAs = inmutable || !GlitterManager.Instance.glitterIsBad ? initialWorkAs : OpositeInitialWorkAs;
-        animator.SetBool("glow", GlitterManager.Instance.glitterIsBad && worksAs != ECoinOrBomb.Coin || !GlitterManager.Instance.glitterIsBad && worksAs == ECoinOrBomb.Coin);
+        if (DifficultyManager.Instance.difficultyLevel == DifficultyManager.EDifficultyLevel.easy)
+        {
+            worksAs = lookAs;
+            animator.SetBool("glow", worksAs == ECoinOrBomb.Coin);
+        }
+        else if (GlitterManager.Instance == null)
+        {
+            worksAs = initialWorkAs;
+            animator.SetBool("glow", worksAs == ECoinOrBomb.Coin);
+        }
+        else
+        {
+            worksAs = inmutable || !GlitterManager.Instance.glitterIsBad ? initialWorkAs : OpositeInitialWorkAs;
+            animator.SetBool("glow", GlitterManager.Instance.glitterIsBad && worksAs != ECoinOrBomb.Coin || !GlitterManager.Instance.glitterIsBad && worksAs == ECoinOrBomb.Coin);
+        }
     }
 }

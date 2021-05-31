@@ -29,6 +29,8 @@ public class GameOverManager : MonoBehaviour
     {
         End = true;
         animation.Play();
+
+        PrinceOfMoroccoManager.Instance.Reset();
         if (FrontCourtainManager.Instance != null)
             FrontCourtainManager.Instance.Close();
     }
@@ -43,6 +45,7 @@ public class GameOverManager : MonoBehaviour
             return;
         FrontCourtainManager.Instance.Open();
         PlayerManager.Instance.Reset();
+        DeadPlayerManager.Instance.Hide();
         SceneManager.LoadScene(0);
     }
 }

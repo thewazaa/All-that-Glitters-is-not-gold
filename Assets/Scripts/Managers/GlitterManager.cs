@@ -30,7 +30,12 @@ public class GlitterManager : MonoBehaviour
         }
     }
 
-    private void Start() => StartCoroutine(CourotineGlitter());
+    private void Start()
+    {
+        glitterIsBad = DifficultyManager.Instance.difficultyLevel == DifficultyManager.EDifficultyLevel.hard;
+        canvas.enabled = false;
+        WalkAreaManager.Instance.ChangeHowItIsSeen();
+    }
 
     private IEnumerator CourotineGlitter()
     {
@@ -44,17 +49,14 @@ public class GlitterManager : MonoBehaviour
         }
     }
 
-    public void SetGlitterOn()
-    {
-        StartCoroutine(CoroutineDownTime());
-    }
-    public void Reset() => StartCoroutine(CoroutineDownTime());
+    public void SetGlitterOn() => StartCoroutine(CoroutineDownTime());
 
     private IEnumerator CoroutineDownTime()
     {
         canvas.enabled = true;
         glitterIsBad = true;
         WalkAreaManager.Instance.ChangeHowItIsSeen();
+        GameManager.Instance.pause = false;
         int time = 30;
         while (time > 0 && !GameOverManager.Instance.End)
         {

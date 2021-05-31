@@ -9,7 +9,7 @@ public class MenuManager : MonoBehaviour
     public static MenuManager Instance { get; private set; }
 
     private CanvasGroup canvasGroup;
-    private AudioSource audioSource;    
+    private AudioSource audioSource;
 
     [Header("Translations")]
     public TextMeshProUGUI bStartGame;
@@ -28,7 +28,16 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    private void Start() => Translate();
+    private IEnumerator Start()
+    {
+        Translate();
+        Camera.main.transform.position = new Vector3(0, 0, -10);
+        PlayerManager.Instance.gameObject.SetActive(true);
+
+        while (!FrontCourtainManager.Instance.opened)
+            yield return new WaitForFixedUpdate();
+        StartCoroutine(CoroutineShow(true));
+    }
 
     public void Translate()
     {
@@ -39,7 +48,8 @@ public class MenuManager : MonoBehaviour
 
     public void ButtonStart()
     {
-        StartCoroutine(CoroutineHide(true));
+        StartCoroutine(CoroutineHide());
+        StartCoroutine(MenuDifficultyManager.Instance.CoroutineShow());
         audioSource.Play();
     }
 
@@ -56,7 +66,7 @@ public class MenuManager : MonoBehaviour
         audioSource.Play();
     }
 
-    public IEnumerator CoroutineHide(bool changeScene = false)
+    public IEnumerator CoroutineHide()
     {
         FrontCourtainManager.Instance.FadeOut();
         for (float i = 1; i >= 0; i -= .1f)
@@ -67,13 +77,12 @@ public class MenuManager : MonoBehaviour
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
-        if (changeScene)
-            SceneManager.LoadScene(1);
     }
 
-    public IEnumerator CoroutineShow()
+    public IEnumerator CoroutineShow(bool start = false)
     {
-        FrontCourtainManager.Instance.FadeIn(); 
+        if (!start)
+            FrontCourtainManager.Instance.FadeIn();
         for (float i = 0; i <= 1; i += .1f)
         {
             canvasGroup.alpha = i;
