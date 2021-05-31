@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,14 +35,14 @@ public class GlitterManager : MonoBehaviour
         WalkAreaManager.Instance.ChangeHowItIsSeen();
     }
 
-    private IEnumerator CourotineGlitter()
+    private IEnumerator CourotineGlitter(int time)
     {
         glitterIsBad = false;
         canvas.enabled = false;
         WalkAreaManager.Instance.ChangeHowItIsSeen();
         if (!GameOverManager.Instance.End)
         {
-            yield return new WaitForSeconds(30);
+            yield return new WaitForSeconds(time);
             PrinceOfMoroccoManager.Instance.StartAction();
         }
     }
@@ -68,6 +66,6 @@ public class GlitterManager : MonoBehaviour
                 audioSource.PlayOneShot(GameManager.Instance.soundTick);
         }
         canvas.enabled = false;
-        StartCoroutine(CourotineGlitter());
+        StartCoroutine(CourotineGlitter(Random.Range(60, 120)));
     }
 }

@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public AudioClip soundExplosion;
     public AudioClip soundMagicExplosion;
     public AudioClip soundAllThatGlittersIsNotGold;
+    public AudioClip[] soundJaime;
 
     private void Awake()
     {
