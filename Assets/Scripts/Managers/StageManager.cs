@@ -39,7 +39,7 @@ public class StageManager : MonoBehaviour
         {
             case DifficultyManager.EDifficultyLevel.normal: StartCoroutine(CourotineStage(30)); break;
             case DifficultyManager.EDifficultyLevel.hard: StartCoroutine(CourotineStage(30)); break;
-            case DifficultyManager.EDifficultyLevel.veryHard: StartCoroutine(CourotineStage(90)); break;
+            case DifficultyManager.EDifficultyLevel.veryHard: StartCoroutine(CourotineStage(130)); break;
         }
     }
 
@@ -80,6 +80,11 @@ public class StageManager : MonoBehaviour
                 audioSource.PlayOneShot(GameManager.Instance.soundTick);
         }
         canvas.enabled = false;
-        StartCoroutine(CourotineStage(Random.Range(60, 120)));
+        switch (DifficultyManager.Instance.difficultyLevel)
+        {
+            case DifficultyManager.EDifficultyLevel.normal: StartCoroutine(CourotineStage(Random.Range(15, 45))); break;
+            case DifficultyManager.EDifficultyLevel.hard: StartCoroutine(CourotineStage(Random.Range(35, 105))); break;
+            case DifficultyManager.EDifficultyLevel.veryHard: StartCoroutine(CourotineStage(Random.Range(65, 195))); break;
+        }
     }
 }

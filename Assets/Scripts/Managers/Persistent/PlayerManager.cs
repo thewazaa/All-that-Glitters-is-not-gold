@@ -62,7 +62,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (!isOn)
             return;
-        horizontal = Input.GetAxis("Horizontal") * speed;
+        horizontal = Input.GetAxis("Horizontal") * speed * (ReverseManager.Instance.reversing ? -1 : 1);
         if (Input.GetButtonDown("Fire1") && OnFloor)
             vertical = 7;
     }
