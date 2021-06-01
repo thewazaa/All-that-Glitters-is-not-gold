@@ -1,13 +1,14 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GlitterManager : MonoBehaviour
+public class ReverseManager : MonoBehaviour
 {
-    public static GlitterManager Instance { get; private set; }
+    public static ReverseManager Instance { get; private set; }
 
-    public bool glitterIsBad = false;
+    public bool reversing = false;
 
     public Image clock;
 
@@ -30,30 +31,35 @@ public class GlitterManager : MonoBehaviour
 
     private void Start()
     {
-        glitterIsBad = DifficultyManager.Instance.difficultyLevel == DifficultyManager.EDifficultyLevel.hard;
         canvas.enabled = false;
-        WalkAreaManager.Instance.ChangeHowItIsSeen();
-    }
-
-    private IEnumerator CourotineGlitter(int time)
-    {
-        glitterIsBad = false;
-        canvas.enabled = false;
-        WalkAreaManager.Instance.ChangeHowItIsSeen();
-        if (!GameOverManager.Instance.End)
+        switch (DifficultyManager.Instance.difficultyLevel)
         {
-            yield return new WaitForSeconds(time);
-            PrinceOfMoroccoManager.Instance.StartAction();
+            case DifficultyManager.EDifficultyLevel.hard: 
+            case DifficultyManager.EDifficultyLevel.veryHard: 
+                StartCoroutine(CourotineStage(80)); 
+                break;
         }
     }
 
-    public void SetGlitterOn() => StartCoroutine(CoroutineDownTime());
+    private IEnumerator CourotineStage(int time)
+    {
+        reversing = false;
+        canvas.enabled = false;
+
+        if (!GameOverManager.Instance.End)
+        {
+            yield return new WaitForSeconds(time);
+            JulietManager.Instance.StartAction();
+        }
+    }
+
+    public void SetReversing() => StartCoroutine(CoroutineDownTime());
 
     private IEnumerator CoroutineDownTime()
     {
         canvas.enabled = true;
-        glitterIsBad = true;
-        WalkAreaManager.Instance.ChangeHowItIsSeen();
+        reversing = true;
+
         GameManager.Instance.pause = false;
         int time = 30;
         while (time > 0 && !GameOverManager.Instance.End)
@@ -66,6 +72,6 @@ public class GlitterManager : MonoBehaviour
                 audioSource.PlayOneShot(GameManager.Instance.soundTick);
         }
         canvas.enabled = false;
-        StartCoroutine(CourotineGlitter(Random.Range(65, 195)));
+        StartCoroutine(CourotineStage(Random.Range(60, 120)));
     }
 }
