@@ -44,6 +44,11 @@ Click1.wav https://freesound.org/people/EdgardEdition/sounds/113051/";
     public string andAlltheMenAndWomenMerelyPlayers = "And all the men and women merely players:";
     public string theyHaveTheirExitsAndTheirEntrances = "They have their exits and their entrances";
 
+    public string oRomeo = "O Romeo,";
+    public string romeo = "Romeo";
+    public string whereforeArtThou = "wherefore art thou";
+    public string romeo2 = "Romeo?";
+
     public string tCoins = "Coins";
     public string tBombs = "Bombs";
     public string tWalkingBoxes = "Walking boxes";
