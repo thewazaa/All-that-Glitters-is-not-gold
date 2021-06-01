@@ -79,3 +79,8 @@ MonoBehaviour:
   bNormal: "Tot el que brilla \xE9s or (normal)"
   bHard: "No tot el que brilla \xE9s or (dif\xEDcil)"
   bVeryHard: " Per qu\xE8 \xE9s tan dif\xEDcil? (Molt dif\xEDcil)"
+  highScoreFurtherText: "En \"[difficulty]\" el temps m\xE9s llarg ha estat [time]
+    amb [gold] monedes"
+  highScoreHighestText: "En \"[difficulty]\" la puntuaci\xF3 m\xE9s alta ha estat
+    [gold] monedes amb [time]"
+  highScoreNotText: Encara no has jugat "[difficulty]"

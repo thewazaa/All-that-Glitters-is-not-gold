@@ -23,12 +23,12 @@ public class DeadPlayerManager : MonoBehaviour
     public void Replace()
     {
         foreach (DeadPlayerPart deadPlayerPart in deadPlayerParts)
-            deadPlayerPart.gameObject.SetActive(true);
+            deadPlayerPart.Activate();
     }
 
     public void Hide()
     {
         foreach (DeadPlayerPart deadPlayerPart in deadPlayerParts)
-            deadPlayerPart.gameObject.SetActive(false);
+            deadPlayerPart.Deactivate();
     }
 }

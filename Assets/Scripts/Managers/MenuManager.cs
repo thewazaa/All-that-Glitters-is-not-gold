@@ -37,6 +37,9 @@ public class MenuManager : MonoBehaviour
         while (!FrontCourtainManager.Instance.opened)
             yield return new WaitForFixedUpdate();
         StartCoroutine(CoroutineShow(true));
+#if UNITY_EDITOR || UNITY_WEBGL
+        bQuit.enabled = false;
+#endif
     }
 
     public void Translate()
