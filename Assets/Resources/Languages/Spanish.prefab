@@ -79,3 +79,8 @@ MonoBehaviour:
   bNormal: Todo lo que brilla es oro (normal)
   bHard: "No todo lo que brilla es oro (dif\xEDcil)"
   bVeryHard: "\xBFPor qu\xE9 es tan dif\xEDcil? (muy dif\xEDcil)"
+  highScoreFurtherText: "En \"[difficulty]\" el tiempo m\xE1s largo ha sido [time]
+    con [gold] monedas"
+  highScoreHighestText: "En \"[difficulty]\" la puntuaci\xF3n m\xE1s alta ha sido
+    [gold] monedas en [time]"
+  highScoreNotText: "A\xFAn no has jugado \"[difficulty]\""
