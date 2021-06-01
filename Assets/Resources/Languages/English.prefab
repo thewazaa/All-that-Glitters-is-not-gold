@@ -57,13 +57,36 @@ MonoBehaviour:
   tTime: Time
   tGold: Gold
   tAbout: "Game made by Josep M. Pons\r\n\r\nCode: Josep M. Pons\r\n\r\nGraphics:
-    Josep M.Pons\r\n\r\nMusic:\r\n\r\nThe Intruder: Rub\xE9n Carret\xF3n (https://soundcloud.com/user-791255671)\r\n\r\nSounds:\r\n\r\nClick1.wav
+    Josep M. Pons\r\n\r\nMusic:\r\n\r\nThe Intruder: Rub\xE9n Carret\xF3n (https://soundcloud.com/user-791255671)\r\n\r\nSounds:\r\n\r\nClick1.wav
     - by EdgardEdition (https://freesound.org/people/EdgardEdition/sounds/113051/)\r\nRetro
     Coin Collect - by DrMinky (https://freesound.org/people/DrMinky/sounds/166184/)\r\nWatch
     tick - by DrMinky (https://freesound.org/people/DrMinky/sounds/174721/)\r\nExplosion
     - by Aiwha (https://freesound.org/people/Aiwha/sounds/250712/)\r\nExplosion_001.mp3
     - by cydon (https://freesound.org/people/cydon/sounds/268557/)\r\nGame_Over_06_Voices.wav
-    - by MATRIXXX_ (https://freesound.org/people/MATRIXXX_/sounds/435203/)\r\n\r\nVoices:\r\n\r\nAll
-    that glitters is not gold: Josep M. Pons\r\n\r\n-\r\n\r\nThanks to Rub\xE9n to
-    let me use his music"
+    - by MATRIXXX_ (https://freesound.org/people/MATRIXXX_/sounds/435203/)\r\n\r\nVoices:\r\n\r\nPrince
+    Morocco: Josep M. Pons\r\nJulieta: Judit Pizarro\r\nJaime: Josep M. Pons\r\n\r\n-\r\n\r\nThanks
+    to Rub\xE9n to let me use his music, and to Felipe Bermejo for his labor as beta
+    tester\r\n\r\nAnd thanks to my wife to let me use her voice and her patience
+    with me"
   allThatGlittersIsNotGold: All That Glitters Is Not Gold
+  allTheWorldIsAStage: All the world's a stage,
+  andAlltheMenAndWomenMerelyPlayers: 'And all the men and women merely players:'
+  theyHaveTheirExitsAndTheirEntrances: They have their exits and their entrances
+  oRomeo: O Romeo,
+  romeo: Romeo
+  whereforeArtThou: wherefore art thou
+  romeo2: Romeo?
+  tCoins: Coins
+  tBombs: Bombs
+  tWalkingBoxes: Walking boxes
+  tBackBoxes: Back boxes
+  tBeware: Beware the glitter
+  bEasy: Gold is gold, boms are bombs (easy)
+  bNormal: All that glitters is gold (normal)
+  bHard: All that glitters is not gold (hard)
+  bVeryHard: Why so hard? (very hard)
+  highScoreFurtherText: At "[difficulty]" the longest time you done is [time] with
+    [gold] coins
+  highScoreHighestText: At "[difficulty]" the biggest score you done is [gold] coins
+    in [time]
+  highScoreNotText: You had still not played "[difficulty]"
