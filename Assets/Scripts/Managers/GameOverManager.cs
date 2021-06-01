@@ -11,7 +11,6 @@ public class GameOverManager : MonoBehaviour
     private AudioSource audioSource;
 
     public bool End { get; private set; }
-    private bool interacterable = false;
 
     private void Awake()
     {
@@ -32,18 +31,17 @@ public class GameOverManager : MonoBehaviour
 
         PrinceOfMoroccoManager.Instance.Reset();
         if (FrontCourtainManager.Instance != null)
-            FrontCourtainManager.Instance.Close();
+            FrontCourtainManager.Instance.BeginClose();
+        HighScoresManager.AddHighScore(DifficultyManager.Instance.difficultyLevel, TimeManager.Instance.totalTime, GoldManager.Instance.TotalGold);
     }
 
     public void SoundGameOver() => audioSource.PlayOneShot(GameManager.Instance.soundGameOver);
 
-    public void SetInteracterable() => interacterable = true;
-
     public void Update()
     {
-        if (!interacterable || !Input.anyKeyDown)
+        if (!End || !Input.anyKeyDown)
             return;
-        FrontCourtainManager.Instance.Open();
+        FrontCourtainManager.Instance.BeginOpen();
         PlayerManager.Instance.Reset();
         DeadPlayerManager.Instance.Hide();
         SceneManager.LoadScene(0);

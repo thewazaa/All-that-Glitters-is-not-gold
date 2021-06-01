@@ -28,9 +28,9 @@ public class FrontCourtainManager : MonoBehaviour
             FadeOut();
     }
 
-    public void Open() => animator.SetTrigger("open");
+    public void BeginOpen() => animator.SetBool("opened", true);
 
-    public void Close() => animator.SetTrigger("close");
+    public void BeginClose() => animator.SetBool("opened", false);
 
     public void FadeIn() => animator.SetTrigger("light fade in");
 

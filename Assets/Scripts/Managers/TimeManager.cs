@@ -10,7 +10,7 @@ public class TimeManager : MonoBehaviour
 
     private TextMeshProUGUI text;
 
-    private float totalTime = 0;
+    public float totalTime = 0;
 
     public bool enableTimer;
 

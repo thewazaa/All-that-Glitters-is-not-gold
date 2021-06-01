@@ -92,6 +92,7 @@ public class ConfigManager : MonoBehaviour
         LanguageManager.Instance.Language = language;
         Translate();
         MenuManager.Instance.Translate();
+        MenuDifficultyManager.Instance.Translate();
         audioSource.Play();
     }
 

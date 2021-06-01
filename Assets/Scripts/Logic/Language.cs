@@ -54,4 +54,9 @@ Click1.wav https://freesound.org/people/EdgardEdition/sounds/113051/";
     public string bNormal = "All that glitters is gold (normal)";
     public string bHard = "All that glitters is not gold (hard)";
     public string bVeryHard = "Why so hard? (very hard)";
+
+    public string highScoreFurtherText = "At \"[difficulty]\" the longest time you done is [time] with [gold] coins";
+    public string highScoreHighestText = "At \"[difficulty]\" the biggest score you done is [gold] coins in [time]";
+    public string highScoreNotText = "You had still not played \"[difficulty]\"";
 }
+
