@@ -73,7 +73,7 @@ MonoBehaviour:
   theyHaveTheirExitsAndTheirEntrances: Con sus correspondientes salidas y entradas
   oRomeo: O Romeo,
   romeo: Romeo
-  whereforeArtThou: wherefore art thou
+  whereforeArtThou: "\xBFPor qu\xE9 t\xFA,"
   romeo2: Romeo?
   tCoins: Monedas
   tBombs: Bombas

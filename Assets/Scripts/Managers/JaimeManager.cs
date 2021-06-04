@@ -25,7 +25,9 @@ public class JaimeManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Start() => Translate();
+
+    public void Translate()
     {
         textToShow[0] = LanguageManager.Instance.Text.allTheWorldIsAStage;
         textToShow[1] = LanguageManager.Instance.Text.andAlltheMenAndWomenMerelyPlayers;
