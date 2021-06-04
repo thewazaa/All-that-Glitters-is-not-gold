@@ -93,6 +93,9 @@ public class ConfigManager : MonoBehaviour
         Translate();
         MenuManager.Instance.Translate();
         MenuDifficultyManager.Instance.Translate();
+        JaimeManager.Instance.Translate();
+        JulietManager.Instance.Translate();
+        PrinceOfMoroccoManager.Instance.Translate();
         audioSource.Play();
     }
 
