@@ -25,7 +25,9 @@ public class JulietManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Start() => Translate();
+
+    public void Translate()
     {
         textToShow[0] = LanguageManager.Instance.Text.oRomeo;
         textToShow[1] = LanguageManager.Instance.Text.romeo;
